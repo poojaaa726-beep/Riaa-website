@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riaa Enterprises | Brain Aqua – Pure Water Delivery</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #0077cc;
+  --light-blue: #00aaff;
+  --sky: #e6f4ff;
+  --green: #25D366;
+  --white: #ffffff;
+  --text: #1a2e44;
+  --muted: #5a7a99;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--sky);
+  color: var(--text);
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 6%;
+  background: var(--blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-icon { font-size: 28px; }
+.logo h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+.logo span { font-size: 0.7rem; font-weight: 400; opacity: 0.85; display: block; }
+
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: background 0.2s;
+  display: inline-block;
+}
+nav a:hover { background: rgba(255,255,255,0.2); }
+
+.call-btn {
+  background: white;
+  color: var(--blue);
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+.call-btn:hover { transform: scale(1.05); }
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 70px 20px 80px;
+  background: linear-gradient(135deg, #005fa3, #00aaff, #33ccff);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: -30px; left: 0; right: 0;
+  height: 60px;
+  background: var(--sky);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.hero p { font-size: 1rem; opacity: 0.9; margin-bottom: 8px; }
+.hero-timing {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 28px;
+}
+
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.order-btn {
+  background: var(--green);
+  padding: 13px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.order-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
+
+.call-hero-btn {
+  background: white;
+  color: var(--blue);
+  padding: 13px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.call-hero-btn:hover { transform: translateY(-2px); }
+
+/* ── SECTIONS ── */
+section { padding: 55px 6%; scroll-margin-top: 70px; }
+.section-title {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.section-title h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.section-title p { color: var(--muted); font-size: 0.95rem; }
+
+/* ── ABOUT ── */
+#about { background: white; }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.about-item {
+  text-align: center;
+  padding: 28px 20px;
+  border-radius: 14px;
+  background: var(--sky);
+  border: 1px solid #cce4ff;
+}
+.about-item .icon { font-size: 2.2rem; margin-bottom: 10px; }
+.about-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--blue); }
+.about-item p { font-size: 0.85rem; color: var(--muted); }
+
+/* ── SERVICES ── */
+#services { background: var(--sky); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.card {
+  background: white;
+  padding: 28px 20px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid #d6eaff;
+  box-shadow: 0 2px 12px rgba(0,119,204,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,119,204,0.13); }
+.card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+.card h3 { font-weight: 700; font-size: 1rem; margin-bottom: 6px; color: var(--blue); }
+.card p { font-size: 0.82rem; color: var(--muted); }
+
+/* ── PRICING ── */
+#pricing { background: white; }
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.price-box {
+  background: linear-gradient(135deg, #0077cc, #00aaff);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,119,204,0.25);
+}
+.price-box .price { font-size: 2rem; font-weight: 900; font-family: 'Nunito', sans-serif; }
+.price-box .label { font-size: 0.85rem; opacity: 0.85; margin-top: 4px; }
+.price-box .desc { font-size: 0.8rem; opacity: 0.75; margin-top: 8px; }
+
+/* ── ORDER FORM ── */
+#order-form { background: var(--sky); }
+.form-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,119,204,0.1);
+}
+.form-wrap input,
+.form-wrap select {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid #cce0f5;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-wrap input:focus,
+.form-wrap select:focus { border-color: var(--blue); }
+.form-wrap button {
+  width: 100%;
+  padding: 13px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.form-wrap button:hover { background: #1ebc59; transform: translateY(-1px); }
+
+/* ── TESTIMONIALS ── */
+#testimonials { background: white; }
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.testi-card {
+  background: var(--sky);
+  border: 1px solid #cce4ff;
+  border-radius: 14px;
+  padding: 22px;
+}
+.stars { color: #f5a623; font-size: 1rem; margin-bottom: 8px; }
+.testi-card p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin-bottom: 12px; }
+.testi-name { font-weight: 700; font-size: 0.85rem; color: var(--blue); }
+
+/* ── LOCATION ── */
+#location { background: var(--sky); }
+.map-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.map-wrap iframe { width: 100%; height: 320px; border: none; display: block; }
+.map-link-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(135deg, #e6f4ff, #cce4ff);
+  border: 2px dashed #0077cc;
+  border-radius: 14px;
+  padding: 32px 28px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.map-link-box:hover { background: linear-gradient(135deg, #cce4ff, #aad4ff); transform: translateY(-2px); }
+.map-pin { font-size: 3rem; }
+.map-text { flex: 1; }
+.map-text strong { display: block; font-size: 1.1rem; color: #0077cc; margin-bottom: 4px; }
+.map-text span { font-size: 0.85rem; color: var(--muted); }
+.map-arrow { font-size: 1.6rem; color: #0077cc; font-weight: bold; }
+.delivery-area {
+  text-align: center;
+  margin-top: 16px;
+  background: white;
+  border: 1px solid #cce4ff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 16px auto 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.delivery-area strong { color: var(--blue); }
+
+/* ── CONTACT ── */
+#contact { background: white; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-item {
+  background: var(--sky);
+  border: 1px solid #cce4ff;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+}
+.contact-item .icon { font-size: 1.8rem; margin-bottom: 8px; }
+.contact-item a { color: var(--blue); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+.contact-item p { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--blue);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.83rem;
+}
+
+/* ── WHATSAPP FLOAT ── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--green);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+  transition: transform 0.2s;
+  z-index: 999;
+}
+.floating-whatsapp:hover { transform: scale(1.1); }
+
+/* ── MOBILE ── */
+@media(max-width: 600px) {
+  header { flex-direction: column; text-align: center; }
+  .form-wrap { padding: 22px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span class="logo-icon">💧</span>
+    <h2>Riaa Enterprises <span>Brain Aqua – Pure Water</span></h2>
+  </div>
+  <nav>
+    <a onclick="goTo('about')" style="cursor:pointer">About</a>
+    <a onclick="goTo('services')" style="cursor:pointer">Services</a>
+    <a onclick="goTo('pricing')" style="cursor:pointer">Pricing</a>
+    <a onclick="goTo('order-form')" style="cursor:pointer">Order</a>
+    <a onclick="goTo('contact')" style="cursor:pointer">Contact</a>
+  </nav>
+  <a href="tel:9226259151" class="call-btn">📞 Call Now</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✅ Trusted Water Delivery – Vasai-Virar</div>
+  <h1>💧 Pure & Safe Drinking Water</h1>
+  <p>Delivered fresh to your door – every single day</p>
+  <div class="hero-timing">🕖 Same Day Delivery &nbsp;|&nbsp; 7 AM – 9 PM</div>
+  <div class="hero-btns">
+    <a href="https://wa.me/919226259151?text=Hello%20%F0%9F%91%8B%20Welcome%20to%20Riaa%20Enterprises%20%E2%80%93%20Brain%20Aqua!%0A%0AThank%20you%20for%20contacting%20us.%20%F0%9F%92%A7%0A%0APlease%20choose%20what%20you%20need%3A%0A%F0%9F%9B%92%201%20%E2%80%93%20Order%20Water%20Jar%20(20L)%0A%F0%9F%94%84%202%20%E2%80%93%20Monthly%20Subscription%0A%E2%9D%93%203%20%E2%80%93%20Ask%20a%20Question%0A%0AReply%20with%201%2C%202%20or%203%20to%20continue!" class="order-btn">
+      <span>💬</span> Order on WhatsApp
+    </a>
+    <a href="tel:9226259151" class="call-hero-btn">
+      <span>📞</span> Call Us
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
+    <h2>Why Choose Us?</h2>
+    <p>Reliable, pure water supply for homes & offices in Vasai-Virar</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-item">
+      <div class="icon">🏆</div>
+      <h3>Trusted Brand</h3>
+      <p>Years of service delivering safe drinking water to hundreds of families</p>
+    </div>
+    <div class="about-item">
+      <div class="icon">🚀</div>
+      <h3>Same Day Delivery</h3>
+      <p>Order before 6 PM and get your jar delivered the same day</p>
+    </div>
+    <div class="about-item">
+      <div class="icon">🔬</div>
+      <h3>Quality Tested</h3>
+      <p>Every jar is purified and quality-checked before delivery</p>
+    </div>
+    <div class="about-item">
+      <div class="icon">💰</div>
+      <h3>Affordable Prices</h3>
+      <p>Best rates in Vasai-Virar with subscription discounts available</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Everything you need for clean water at home or office</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🫙</div>
+      <h3>20L Jar Supply</h3>
+      <p>Standard 20-litre sealed water jars for home & office use</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3>Home Delivery</h3>
+      <p>Door-to-door delivery across Vasai-Virar area, 7 AM – 9 PM</p>
+    </div>
+    <div class="card">
+      <div class="icon">📅</div>
+      <h3>Monthly Subscription</h3>
+      <p>Save more with our monthly plan — fixed delivery schedule</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>Office/Bulk Supply</h3>
+      <p>Bulk orders for offices, events & commercial use</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-title">
+    <h2>Pricing</h2>
+    <p>Simple, transparent pricing – no hidden charges</p>
+  </div>
+  <div class="price-grid">
+    <div class="price-box">
+      <div class="price">₹40</div>
+      <div class="label">Per 20L Jar</div>
+      <div class="desc">Single order – same day delivery</div>
+    </div>
+    <div class="price-box">
+      <div class="price">₹35</div>
+      <div class="label">Per Jar (Subscription)</div>
+      <div class="desc">Monthly plan – save ₹5 per jar</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section id="order-form">
+  <div class="section-title">
+    <h2>Place Your Order</h2>
+    <p>Fill the form and we'll contact you on WhatsApp instantly</p>
+  </div>
+  <div class="form-wrap">
+    <input type="text" id="fname" placeholder="👤 Your Name" required>
+    <input type="text" id="fphone" placeholder="📱 Mobile Number" required>
+    <input type="text" id="faddress" placeholder="🏠 Delivery Address">
+    <select id="fqty">
+      <option value="">🫙 Number of Jars</option>
+      <option value="1">1 Jar</option>
+      <option value="2">2 Jars</option>
+      <option value="3">3 Jars</option>
+      <option value="5">5 Jars</option>
+      <option value="10">10 Jars (Bulk)</option>
+    </select>
+    <select id="ftype">
+      <option value="">📦 Order Type</option>
+      <option value="Single Order">Single Order</option>
+      <option value="Monthly Subscription">Monthly Subscription</option>
+    </select>
+    <button onclick="submitOrder()">💬 Send Order on WhatsApp</button>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-title">
+    <h2>What Our Customers Say</h2>
+    <p>Trusted by families and offices across Vasai-Virar</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Very punctual delivery every day. Water quality is excellent. Highly recommend Riaa Enterprises!"</p>
+      <div class="testi-name">— Priya S., Vasai West</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Been using for 6 months. Never missed a delivery. Best water service in Virar!"</p>
+      <div class="testi-name">— Rajan M., Virar East</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Monthly subscription is very affordable. Saved money and time. Great service!"</p>
+      <div class="testi-name">— Sunita P., Nala Sopara</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="section-title">
+    <h2>Our Location</h2>
+    <p>Serving the entire Vasai-Virar region</p>
+  </div>
+  <div class="map-wrap">
+    <a href="https://www.google.com/maps/search/Vasai-Virar,Maharashtra,India" target="_blank" class="map-link-box">
+      <div class="map-pin">📍</div>
+      <div class="map-text">
+        <strong>Vasai-Virar, Maharashtra</strong>
+        <span>Tap to open in Google Maps</span>
+      </div>
+      <div class="map-arrow">→</div>
+    </a>
+  </div>
+  <div class="delivery-area">
+    📍 <strong>Delivery Areas:</strong> Vasai West, Vasai East, Virar West, Virar East, Nala Sopara & nearby areas
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact Us</h2>
+    <p>We're available 7 AM – 9 PM, 7 days a week</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="icon">📞</div>
+      <a href="tel:9226259151">9226259151</a>
+      <p>Call us anytime</p>
+    </div>
+    <div class="contact-item">
+      <div class="icon">💬</div>
+      <a href="https://wa.me/919226259151?text=Hello%20Riaa%20Enterprises!%20I%20need%20water%20delivery.">WhatsApp Us</a>
+      <p>Quick reply on WhatsApp</p>
+    </div>
+    <div class="contact-item">
+      <div class="icon">📧</div>
+      <a href="mailto:riaaenterprises5@gmail.com">riaaenterprises5@gmail.com</a>
+      <p>Email us anytime</p>
+    </div>
+    <div class="contact-item">
+      <div class="icon">🕖</div>
+      <a>7 AM – 9 PM</a>
+      <p>Mon–Sun, all week</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Riaa Enterprises – Brain Aqua | Pure Water Delivery, Vasai-Virar 💧</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919226259151?text=Hello%20%F0%9F%91%8B%20Welcome%20to%20Riaa%20Enterprises%20%E2%80%93%20Brain%20Aqua!%0A%0AThank%20you%20for%20contacting%20us.%20%F0%9F%92%A7%0A%0APlease%20choose%20what%20you%20need%3A%0A%F0%9F%9B%92%201%20%E2%80%93%20Order%20Water%20Jar%20(20L)%0A%F0%9F%94%84%202%20%E2%80%93%20Monthly%20Subscription%0A%E2%9D%93%203%20%E2%80%93%20Ask%20a%20Question%0A%0AReply%20with%201%2C%202%20or%203%20to%20continue!" class="floating-whatsapp" title="Chat on WhatsApp">💬</a>
+
+<script>
+function goTo(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function submitOrder() {
+  const name    = document.getElementById('fname').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const address = document.getElementById('faddress').value.trim();
+  const qty     = document.getElementById('fqty').value;
+  const type    = document.getElementById('ftype').value;
+
+  if (!name || !phone) {
+    alert('Please enter your Name and Mobile Number.');
+    return;
+  }
+
+  const msg = 
+    `Hello Riaa Enterprises! 💧 I want to place an order.\n\n` +
+    `👤 Name: ${name}\n` +
+    `📱 Mobile: ${phone}\n` +
+    (address ? `🏠 Address: ${address}\n` : '') +
+    (qty ? `🫙 Jars: ${qty}\n` : '') +
+    (type ? `📦 Type: ${type}\n` : '') +
+    `\nPlease confirm my order. Thank you!`;
+
+  const url = `https://wa.me/919226259151?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
